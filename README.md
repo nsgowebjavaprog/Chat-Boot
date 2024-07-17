@@ -1,185 +1,70 @@
-First we Open VS-Code then open/create a folder then create 2-new folder are frontend and backend.
+# Getting Started with Create React App
 
-In terminal/ open new terminal--{Execute some commands/commands-lines like as following:
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
--------------------------****************************-----------------------------****************************-------------------------*****************************--------------------------
-PS E:\ALL IN ONE\Socket-io> cd backend
-PS E:\ALL IN ONE\Socket-io\backend> npm init -y
-Wrote to E:\ALL IN ONE\Socket-io\backend\package.json:
+## Available Scripts
 
-{
-  "name": "backend",
-  "version": "1.0.0",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": ""
-}
+In the project directory, you can run:
 
+### `npm start`
 
-PS E:\ALL IN ONE\Socket-io\backend> npm install express socket.io nanoid nodemon
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-added 117 packages, and audited 118 packages in 6s
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
 
-17 packages are looking for funding
-  run `npm fund` for details
+### `npm test`
 
-found 0 vulnerabilities
-PS E:\ALL IN ONE\Socket-io\backend>
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-****************************---------------------------------*********************************----------------------------------------**********************************--------------------
+### `npm run build`
 
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-COMES TO BACKEND FOLDER
---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-Then in Backend folder having the file like package-lock.json & package.json
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-After that we create a file server.js in Backend Folder.
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-COMES TO FRONDEND FOLDER
---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-PS E:\ALL IN ONE\Socket-io> cd frontend
+### `npm run eject`
 
+**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-PS E:\ALL IN ONE\Socket-io\frontend> npx create-react-app chatty
+If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Creating a new React app in E:\ALL IN ONE\Socket-io\frontend\chatty.  
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-Installing packages. This might take a couple of minutes.
-Installing react, react-dom, and react-scripts with cra-template...   
+You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
+## Learn More
 
-added 1483 packages in 1m
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-261 packages are looking for funding
-  run `npm fund` for details
+To learn React, check out the [React documentation](https://reactjs.org/).
 
-Initialized a git repository.
+### Code Splitting
 
-Installing template dependencies using npm...
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-added 63 packages, and changed 1 package in 18s
+### Analyzing the Bundle Size
 
-261 packages are looking for funding
-  run `npm fund` for details
-Removing template package using npm...
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
+### Making a Progressive Web App
 
-removed 1 package, and audited 1546 packages in 7s
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-261 packages are looking for funding
-  run `npm fund` for details
+### Advanced Configuration
 
-8 vulnerabilities (2 moderate, 6 high)
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-To address all issues (including breaking changes), run:
-  npm audit fix --force
+### Deployment
 
-Run `npm audit` for details.
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-Created git commit.
+### `npm run build` fails to minify
 
-Success! Created chatty at E:\ALL IN ONE\Socket-io\frontend\chatty    
-Inside that directory, you can run several commands:
-
-  npm start
-    Starts the development server.
-
-  npm run build
-    Bundles the app into static files for production.
-
-  npm test
-    Starts the test runner.
-
-  npm run eject
-    Removes this tool and copies build dependencies, configuration files
-    and scripts into the app directory. If you do this, you can’t go back!
-
-We suggest that you begin by typing:
-
-  cd chatty
-  npm start
-
-Happy hacking!
-PS E:\ALL IN ONE\Socket-io\frontend> 
-
-
-PS E:\ALL IN ONE\Socket-io\frontend> dir
-
-
-    Directory: E:\ALL IN ONE\Socket-io\frontend
-
-
-Mode                 LastWriteTime         Length Name
-----                 -------------         ------ ----
-d-----        17-07-2024     12:30                chatty
-
-
-PS E:\ALL IN ONE\Socket-io\frontend> cd chatty
-
-------------------------------------------------------------
-
-PS E:\ALL IN ONE\Socket-io\frontend\chatty> npm install socket.io-client nanoid
-
-added 1 package, changed 1 package, and audited 1554 packages in 5s
-
-262 packages are looking for funding
-  run `npm fund` for details
-
-8 vulnerabilities (2 moderate, 6 high)
-
-To address all issues (including breaking changes), run:
-  npm audit fix --force
-
-Run `npm audit` for details.
-
-------------------------------------------------------------
-PS E:\ALL IN ONE\Socket-io\frontend> cd chatty
-PS E:\ALL IN ONE\Socket-io\frontend\chatty>
-PS E:\ALL IN ONE\Socket-io\frontend\chatty> 
-PS E:\ALL IN ONE\Socket-io\frontend\chatty> npm install socket.io-client
-
-added 7 packages, and audited 1553 packages in 7s
-
-261 packages are looking for funding
-  run `npm fund` for details
-
-Compiled successfully!
-Compiled successfully!
-Compiled successfully!
-Compiled successfully!
-
-Compiled successfully!
-
-Compiled successfully!
-
-Compiled successfully!
-
-Compiled successfully!
-Compiled successfully!
-Compiled successfully!
-
-You can now view chatty in the browser.
-
-  Local:            http://localhost:3000
-  On Your Network:  http://10.0.29.4:3000
-
-Note that the development build is not optimized.
-To create a production build, use npm run build.
-
-webpack compiled successfully
-
-----------------------------------------------------------------
-
-Then App.js modify then run all localhost:3000 we get output screen what you written in App.js file
-
-Get start Code available in GitHub
-
-THANK YOU
-
-                               
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

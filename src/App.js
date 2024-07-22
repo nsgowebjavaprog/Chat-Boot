@@ -1,60 +1,51 @@
-import logo from './logo.svg';
-import './App.css';
-import { useState, useEffect } from 'react';
-import { io } from 'socket.io-client';
-import { nanoid } from "nanoid";
+import React from 'react';
+import { Typography, AppBar } from '@material-ui/core';
+import { makeStyles } from '@material-ui/core/styles';
 
-const socket = io.connect("http://localhost:3000");
-const userName = nanoid(4)
+import VideoPlayer from './components/VideoPlayer';
+import Sidebar from './components/Sidebar';
+import Notifications from './components/Notifications';
 
-function App() {
-    const [message, setMessage] = useState('');
-    const [chat, setChat] = useState([]);
+const useStyles = makeStyles((theme) => ({
+  appBar: {
+    borderRadius: 15,
+    margin: '30px 100px',
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+    width: '600px',
+    border: '2px solid black',
 
-    // sending chat
+    [theme.breakpoints.down('xs')]: {
+      width: '90%',
+    },
+  },
+  image: {
+    marginLeft: '15px',
+  },
+  wrapper: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    width: '100%',
+  },
+}));
 
-    const sendChat = (e) => {
-        e.preventDefault();
-        socket.emit("chat", { message, userName});
-        setMessage('');
-    };
+const App = () => {
+  const classes = useStyles();
 
-    //use effect
-    useEffect(() =>{
-      socket.on("chat", (payload)=>{
-        setChat([...chat, payload])
-      })
-    })
-
-    return (
-        <div className="App">
-            <header className="App-header">
-                <h1>Chatty app</h1>
-
-                {chat.map((payload, index) => {
-                  return(
-                    <p key={index}>
-                      {payload.message}: <span>id:{payload.userName}</span>
-      
-                  </p>
-                  )
-                })}
-
-                <form onSubmit={sendChat}>
-                    <input 
-                        type="text" 
-                        name="chat"
-                        placeholder="send text"
-                        value={message}
-                        onChange={(e) => {
-                            setMessage(e.target.value);
-                        }}
-                    />
-                    <button type="submit">Send It!</button>
-                </form>
-            </header>
-        </div>
-    );
-}
+  return (
+    <div className={classes.wrapper}>
+      <AppBar className={classes.appBar} position="static" color="inherit">
+        <Typography variant="h2" align="center">Video Chat</Typography>
+      </AppBar>
+      <VideoPlayer />
+      <Sidebar>
+        <Notifications />
+      </Sidebar>
+    </div>
+  );
+};
 
 export default App;
